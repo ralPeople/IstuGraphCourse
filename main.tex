@@ -1,0 +1,113 @@
+\documentclass[a4paper,14pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}  
+\usepackage[russian]{babel}
+%\usepackage[subpreambles=true]{standalone} % для нескольких файлов
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{fontspec} % Для системных шрифтов
+\usepackage{amsmath}  % Для математических выражений
+\usepackage{xcolor}   % Для цветовых блоков
+\usepackage{parskip}   % Для улучшения отступов между абзацами
+\usepackage{tikz}      % Для рисования линий
+\usepackage{fancyhdr}  % Для красивых шапок и подвалов
+\usepackage{graphicx}  % Для изображений
+\usepackage{titlesec}  % Для настройки заголовков
+\usepackage{tcolorbox}   % Для создания цветных блоков
+\usepackage{tabularray}
+\usepackage{colortbl}
+\usepackage{ragged2e} % Для выравнивания текста по ширине
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{fancyvrb}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+%\usepackage[htt]{hyphenat}
+%\usepackage{soul} % hightlight
+%\usepackage{luatex85}
+%\usepackage{soulutf8} % Пакет для выделения текста с поддержкой UTF-8 и кириллицы
+
+% Настройка страницы
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\setmainfont{Times New Roman} % Используем Times New Roman для официального стиля
+\renewcommand{\baselinestretch}{1.0} % Межстрочный интервал
+\DefTblrTemplate{contfoot-text}{default}{}
+\DefTblrTemplate{conthead-text}{default}{}
+\DefTblrTemplate{caption}{default}{}
+\DefTblrTemplate{conthead}{default}{}
+\DefTblrTemplate{capcont}{default}{}
+
+% Определение стилей для заголовков
+%\titleformat{\section}[block]{\normalfont\LARGE\bfseries\color{black}}{}{0em}{}
+%\titleformat{\subsection}[block]{\normalfont\large\bfseries\color{black}}{}{0em}{}
+%\titleformat{\subsubsection}[block]{\normalfont\normalsize\bfseries\color{black}}{}{0em}{}
+
+% Настройки для выделений
+\newcommand{\highlight}[1]{\textbf{\color{white}\cellcolor{black} #1}}  % Черный фон и белый текст
+\newcommand{\divider}{\noindent\rule{17cm}{1pt}}  % Линия-разделитель
+\newcommand{\sectiondivider}{\textbf{\color{white}\cellcolor{black} \Large \hspace{0.5cm} Раздел \hspace{0.5cm}}}  % Черный фон и белый текст для раздела
+%\newcommand{\titleStyle}[1]{\textbf{\textcolor{white}{\colorbox{black}{#1}}}}
+\newcommand{\titleStyle}[1]{\textbf{\textcolor{white}{\colorbox{black}{\makebox[\textwidth]{#1}}}}}
+\newcommand{\subTitleStyle}[1]{\textbf{\textcolor{black}{\colorbox{gray9}{\makebox[\textwidth]{#1}}}}}
+%\newcommand{\textStyle}[1]{\textbf{\textcolor{black}{\colorbox{gray9}{\makebox[\textwidth]{#1}}}}}
+%\newcommand{\textStyle}[1]{\textbf{\textcolor{black}{\colorbox{gray9}{\parbox{\textwidth}{#1}}}}}
+%\newcommand{\textStyle}[1]{\textcolor{black}{\colorbox{gray9}{\begin{minipage}{\textwidth}\justify #1\end{minipage}}}}
+%\newcommand{\textStyle}[1]{\textcolor{black}{\hl{#1}}}
+
+\lstset{
+    language=C++,                     % Define the language as C++
+    basicstyle=\ttfamily\small,        % Use small monospaced font
+    keywordstyle=\color{blue}\bfseries, % Keywords in blue and bold
+    commentstyle=\color{green},        % Comments in green
+    stringstyle=\color{red},           % Strings in red
+    backgroundcolor=\color{white},     % Background color
+    frame=single,                      % Adds a frame around the code
+    breaklines=true,                   % Wraps long lines
+    showstringspaces=false,            % Don't highlight spaces in strings
+    columns=flexible,                  % Allows flexible column widths
+    morekeywords={and, or, xor}        % Add more keywords
+}   
+
+\newcommand{\Example}[1]{\lstinputlisting[language=C++]{#1}}
+%\newcommand{\Example}[1]{\lstinputlisting[language=C++]{#1}}
+\newcommand{\ExampleFull}[1]{\VerbatimInput{#1}}
+
+% Для шапки и подвала
+\pagestyle{fancy}
+%\fancyhead[L]{\textbf{\huge Уголовное производство [12015]}} % Левый заголовок
+\fancyhead[L]{} % Центральный заголовок
+\fancyhead[R]{Автор конспекта: Родион Лыков} % Правая дата
+\fancyfoot[L]{\textbf{Стр. \thepage}} % Левый подвал
+\fancyfoot[C]{\textbf{}} % Центральный подвал
+\fancyfoot[R]{\textbf{Ижевский государственный технический университет имени М.Т. Калашникова}} % Правый подвал
+
+% Настройка цвета для блоков
+\definecolor{headerColor}{rgb}{0.1,0.1,0.1}  % Темный цвет заголовков
+\definecolor{highlightColor}{rgb}{0.3, 0.4, 0.6}  % Цвет выделения
+\definecolor{dividerColor}{rgb}{0.7, 0.7, 0.7}  % Цвет разделителей
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\title{}
+\author{}
+\date{}
+
+\justifying
+\sloppy 
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+%\subfile
+
+\pagebreak
+
+%\subfile{Sections/bebra}
+
+\subfile{Sections/Dijkstra/dijkstra.tex}
+
+\end{document}
