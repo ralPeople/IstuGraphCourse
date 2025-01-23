@@ -53,6 +53,10 @@
 %\newcommand{\titleStyle}[1]{\textbf{\textcolor{white}{\colorbox{black}{#1}}}}
 \newcommand{\titleStyle}[1]{\textbf{\textcolor{white}{\colorbox{black}{\makebox[\textwidth]{#1}}}}}
 \newcommand{\subTitleStyle}[1]{\textbf{\textcolor{black}{\colorbox{gray9}{\makebox[\textwidth]{#1}}}}}
+\definecolor{softgreen}{RGB}{210, 230, 200} % Мягкий зеленый цвет (настраиваемый)
+\newcommand{\greenTitle}[1]{%
+  \textbf{\textcolor{black}{\colorbox{softgreen}{\makebox[\textwidth]{#1}}}}%
+}
 %\newcommand{\textStyle}[1]{\textbf{\textcolor{black}{\colorbox{gray9}{\makebox[\textwidth]{#1}}}}}
 %\newcommand{\textStyle}[1]{\textbf{\textcolor{black}{\colorbox{gray9}{\parbox{\textwidth}{#1}}}}}
 %\newcommand{\textStyle}[1]{\textcolor{black}{\colorbox{gray9}{\begin{minipage}{\textwidth}\justify #1\end{minipage}}}}
@@ -92,8 +96,8 @@
 
 \usepackage{subfiles} % Best loaded last in the preamble
 
-\title{}
-\author{}
+\title{Хмм, тут должен быть текст? Я еще не придумал :3}
+\author{Автор это я}
 \date{}
 
 \justifying
@@ -109,5 +113,8 @@
 %\subfile{Sections/bebra}
 
 \subfile{Sections/Dijkstra/dijkstra.tex}
+
+
+\subfile{Sections/TreeBase/tree_base.tex}
 
 \end{document}
